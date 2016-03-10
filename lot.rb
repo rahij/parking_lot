@@ -1,7 +1,7 @@
 require_relative './car'
 
 class Lot
-  attr_reader :cars
+  attr_reader :size, :cars
 
   def initialize(size: 1)
     @size = size
@@ -18,7 +18,7 @@ class Lot
   end
 
   def leave(slot:)
-    @cars[slot - 1] = nil
+    @cars[slot] = nil
   end
 
   def to_s
