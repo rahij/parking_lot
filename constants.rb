@@ -1,6 +1,6 @@
 PARKING_FULL_ERROR = "Sorry, parking lot is full"
 INVALID_COMMAND_ERROR = "Invalid command"
-INVALID_NUM_SLOTS_ERROR = "Please provide a valid number of slots in the lot"
-INVALID_SLOT_NUMBER_ERROR = "Please provide a valid slot number"
+INVALID_NUM_SLOTS_ERROR = "Please provide a valid number of slots in the lot (> 0)"
+INVALID_SLOT_NUMBER_ERROR = "Please provide a valid slot number (> 0)"
 EMPTY_COLOR_ERROR = "Please provide a color"
 EMPTY_PLATE_NUMBER_COLOR_ERROR = "Please provide a car registration number and and color"
