@@ -1,27 +1,31 @@
 require_relative './car'
 
 class Lot
-  attr_reader :slots
+  attr_reader :cars
 
   def initialize(size: 1)
     @size = size
-    @slots = []
+    @cars = []
   end
 
   def park(car:)
-    nearest_slot = @slots.size < @size ? @slots.size : @slots.index(&:nil?)
+    nearest_slot = @cars.size < @size ? @cars.size : @cars.index(&:nil?)
     if nearest_slot.nil?
       return nil
     end
-    @slots[nearest_slot] = car
+    @cars[nearest_slot] = car
     nearest_slot
   end
 
   def leave(slot:)
-    @slots[slot - 1] = nil
+    @cars[slot - 1] = nil
   end
 
   def to_s
-    @slots
+    response = ["Slot No.", "Registration No", "Colour"].join("\t") + "\n";
+    response = response + @cars.each_with_index.map do |car, slot_num|
+      next if car.nil?
+      [slot_num + 1, car.plate, car.color].join("\t")
+    end.reject(&:nil?).join("\n")
   end
 end
